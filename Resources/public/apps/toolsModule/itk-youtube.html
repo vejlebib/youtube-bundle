@@ -1,0 +1,36 @@
+<div class="edit-menu--background" role="banner">
+  <div class="edit-menu--background-inner">
+    <div class="edit-menu--toggle-icon" data-ng-click="close()">
+      <div class="svg-clickable">
+        <object data="bundles/os2displayadmin/images/svg/cancel.svg"
+                type="image/svg+xml">
+          <!-- Fallback (ie8)-->
+          <img src="bundles/os2displayadmin/images/cancel.png"/>
+        </object>
+      </div>
+    </div>
+    <div class="edit-menu--background-page">
+      <div class="edit-menu--background-page-inner">
+        <div class="itk-template-extension--content">
+          <h2 class="edit-menu--background-header">Youtube</h2>
+
+          <div class="itk-template-extension--tool-section">
+            <h2 class="itk-template-extension--tool-headline">Vælg id</h2>
+
+            <label for="youtube_id">Youtube video ID</label>
+            <input id="youtube_id" name="youtube_id" type="text" data-ng-model="slide.options.videoId">
+
+            Id'et findes i linket til videoen.
+          </div>
+          <div class="itk-template-extension--tool-section">
+            <h2 class="itk-template-extension--tool-headline">Lyd</h2>
+
+            <label for="youtube_mute">Slå lyd til/fra:</label>
+            <input type="checkbox" id="youtube_mute"
+                   data-ng-model="slide.options.sound">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
