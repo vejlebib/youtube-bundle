@@ -1,0 +1,11 @@
+<div class="youtube"
+     data-ng-style="{
+      'width': theStyle.width,
+      'height': theStyle.height,
+      'background-color': 'black',
+      'color': 'white'}">
+  <div id="{{ 'youtube-player--' + ikSlide.uniqueId }}"></div>
+  <div data-ng-if="!ikSlide.uniqueId">
+    Youtube: {{ ikSlide.options.videoId }} (Sound: {{ ikSlide.options.sound}})
+  </div>
+</div>

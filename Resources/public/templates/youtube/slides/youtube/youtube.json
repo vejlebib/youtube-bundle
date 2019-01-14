@@ -1,0 +1,31 @@
+{
+  "id": "youtube",
+  "type": "slide",
+  "name": "Youtube",
+  "icon": "youtube.png",
+  "paths": {
+    "live": "youtube.html",
+    "edit": "youtube.html",
+    "preview": "youtube.html",
+    "css": "youtube.css",
+    "js": "bundles/itkyoutube/templates/youtube/slides/youtube/youtube.js"
+  },
+  "orientation": "landscape",
+  "slide_type": "base",
+  "media_type": "image",
+  "script_id": "youtube",
+  "ideal_dimensions": {
+    "width": "1920",
+    "height": "1080"
+  },
+  "empty_options": {
+    "sound": true,
+    "videoId": null
+  },
+  "tools": [
+    {
+      "name": "Youtube",
+      "template": "bundles/itkyoutube/apps/toolsModule/itk-youtube.html"
+    }
+  ]
+}
