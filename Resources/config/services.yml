@@ -1,4 +1,1 @@
 services:
-#    itk_youtube.example:
-#        class: Itk\YoutubeBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

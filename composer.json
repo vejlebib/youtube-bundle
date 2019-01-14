@@ -1,0 +1,12 @@
+{
+    "name": "itk-os2display/youtube-bundle",
+    "description": "Os2Display youtube template.",
+    "type": "symfony-bundle",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Itk\\YoutubeBundle\\": ""
+        }
+    }
+}
