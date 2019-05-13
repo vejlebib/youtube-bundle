@@ -1,6 +1,6 @@
 <?php
 
-namespace Itk\YoutubeBundle\DependencyInjection;
+namespace Os2Display\YoutubeBundle\DependencyInjection;
 
 use Os2Display\CoreBundle\DependencyInjection\Os2DisplayBaseExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class ItkYoutubeExtension extends Os2DisplayBaseExtension
+class Os2DisplayYoutubeExtension extends Os2DisplayBaseExtension
 {
     /**
      * {@inheritdoc}
