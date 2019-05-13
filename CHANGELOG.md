@@ -1,4 +1,8 @@
-# itk-os2display/youtube-bundle
+# os2display/youtube-bundle
+
+## 2.0.0
+
+* Changed to os2display from itk.
 
 ## 1.0.0
 
