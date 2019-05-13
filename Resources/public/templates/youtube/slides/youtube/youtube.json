@@ -8,7 +8,7 @@
     "edit": "youtube.html",
     "preview": "youtube.html",
     "css": "youtube.css",
-    "js": "bundles/itkyoutube/templates/youtube/slides/youtube/youtube.js"
+    "js": "bundles/os2displayyoutube/templates/youtube/slides/youtube/youtube.js"
   },
   "orientation": "landscape",
   "slide_type": "base",
@@ -25,7 +25,7 @@
   "tools": [
     {
       "name": "Youtube",
-      "template": "bundles/itkyoutube/apps/toolsModule/itk-youtube.html"
+      "template": "bundles/os2displayyoutube/apps/toolsModule/youtube-tool.html"
     }
   ]
 }
