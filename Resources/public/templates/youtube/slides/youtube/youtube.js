@@ -38,39 +38,44 @@ if (!window.slideFunctions['youtube']) {
         run: function runYoutubeSlide(slide, region) {
             region.itkLog.info("Running youtube slide: " + slide.title);
 
-            if (YT && slide.options.videoId) {
-                slide.onPlayerReady = function onPlayerReady(event) {
-                    event.target.playVideo();
+            // Wait fadeTime before start to account for fade in.
+            region.$timeout(function () {
+                if (YT && slide.options.videoId) {
+                    slide.onPlayerReady = function onPlayerReady(event) {
+                        event.target.playVideo();
 
-                    if (!slide.options.sound) {
-                        slide.player.mute();
-                    }
-                    else {
-                        slide.player.unMute();
-                    }
-                };
+                        if (!slide.options.sound) {
+                            slide.player.mute();
+                        }
+                        else {
+                            slide.player.unMute();
+                        }
+                    };
 
-                slide.onPlayerStateChange = function onPlayerStateChange(event) {
-                    if (event.data === YT.PlayerState.ENDED) {
+                    slide.onPlayerStateChange = function onPlayerStateChange(event) {
+                        if (event.data === YT.PlayerState.ENDED) {
+                            slide.player.destroy();
+                            region.nextSlide();
+                        }
+                    };
+
+                    slide.player = new YT.Player('youtube-player--' + slide.uniqueId, {
+                        width: '100%',
+                        height: '100%',
+                        videoId: slide.options.videoId,
+                        playerVars: { 'autoplay': 0, 'controls': 0, 'fs': 0 },
+                        events: {
+                            'onReady': slide.onPlayerReady,
+                            'onStateChange': slide.onPlayerStateChange
+                        }
+                    });
+                }
+                else {
+                    region.$timeout(function () {
                         region.nextSlide();
-                    }
-                };
-
-                slide.player = new YT.Player('youtube-player--' + slide.uniqueId, {
-                    width: '100%',
-                    height: '100%',
-                    videoId: slide.options.videoId,
-                    playerVars: { 'autoplay': 0, 'controls': 0, 'fs': 0 },
-                    events: {
-                        'onReady': slide.onPlayerReady
-                    }
-                });
-            }
-            else {
-                region.$timeout(function () {
-                    region.nextSlide();
-                }, 1000);
-            }
+                    }, 1000);
+                }
+            }, region.fadeTime);
         }
     };
 }
